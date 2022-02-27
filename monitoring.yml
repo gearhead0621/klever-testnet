@@ -5,6 +5,8 @@ volumes:
     driver: local
   grafana-data:
     driver: local
+  alertmanager-data:
+    driver: local
 
 services:
   prometheus:
@@ -26,3 +28,12 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
     restart: unless-stopped
+  alertmanager:
+    image: prom/alertmanager:v0.23.0
+    ports:
+      - "9093:9093"
+    volumes:
+      - "./alertmanager:/config"
+      - alertmanager-data:/data
+    restart: unless-stopped
+    command: --config.file=/config/alertmanager.yml --log.level=debug
