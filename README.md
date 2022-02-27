@@ -2,6 +2,7 @@
 
 ## Monitoring Setup
 - Create a VM and install Ubuntu 20.04
+### Docker Install
 - Install Docker
 	- Install necessary packages
 		- `sudo apt-get install ca-certificates curl gnupg lsb-release`
@@ -13,25 +14,18 @@
 		- `sudo apt update`
 		- `sudo apt-get install docker-ce docker-ce-cli containerd.io`
 	- Verify installation
-	`sudo docker run hello-world`
+		- `sudo docker run hello-world`
 
 ### Post-install steps
-
-Create docker group
-
-`sudo groupadd docker`
-
-Add your user to docker group
-
-`sudo usermod -aG docker $USER`
-
-Log out and back in so your group membership is re-evaluated (if on a VM it may need to be restarted)
-
-On Linux you can also use `newgrp docker` to activate the changes to groups
-
-Verify you can run docker commands without sudo
-
-`docker run hello-world`
+- Create docker group
+	- `sudo groupadd docker`
+- Add your user to docker group
+	- `sudo usermod -aG docker $USER`
+- Log out and back in so your group membership is re-evaluated (if on a VM it may need to be restarted)
+	- On Linux you can also use `newgrp docker` to activate the changes to groups
+- Verify you can run docker commands without sudo
+	- `docker run hello-world`
+### Docker Compose Install
 - Install Docker Compose
 	- Using the linuxserver.io docker-compose image
 		- `sudo curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh -o /usr/local/bin/docker-compose`
@@ -43,6 +37,7 @@ Verify you can run docker commands without sudo
 		- `docker-compose --version`
 	- Create docker-compose.yml file (typically stored in the /opt directory)
 		- `sudo nano /opt/docker-compose.yml`
+### Monitoring Container Setup
 - Install Portainer
 - Using Portainer, create a monitoring stack using the monitoring.yml file located in this repo
 	- That will install the Prometheus and Grafana containers
