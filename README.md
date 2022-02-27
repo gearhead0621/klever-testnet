@@ -1,3 +1,3 @@
-# Klever Testnet Setup
+# Klever Testnet
 
-- Test
+`test`
