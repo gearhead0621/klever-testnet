@@ -43,6 +43,5 @@
 	- That will install the Prometheus and Grafana containers
 	- Edit the Prometheus config file
 		- `sudo nano /etc/prometheus/prometheus.yml`
-
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1"
 	- This will configure Prometheus to target your node's metrics output location
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1"
