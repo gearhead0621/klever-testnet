@@ -45,4 +45,4 @@
 		- `sudo nano /etc/prometheus/prometheus.yml`
 	- This will configure Prometheus to target your node's metrics output location
 - When configured correctly you should see an output on the Targets tab of your Prometheus instance that looks like this:
-(https://github.com/gearhead0621/klever-testnet/blob/main/images/Prometheus%20Targets%20example.png "Logo Title Text 1")
+!(https://github.com/gearhead0621/klever-testnet/blob/main/images/Prometheus%20Targets%20example.png "Logo Title Text 1")
