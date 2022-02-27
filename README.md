@@ -1,4 +1,4 @@
-# klever-testnet
+# Klever Testnet
 
 ## Setup
 - Create a VM and install Ubuntu 20.04
