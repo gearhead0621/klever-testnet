@@ -6,19 +6,26 @@ global:
   # external_labels:
   #  monitor: 'codelab-monitor'
 
+rule_files:
+  - "alert_rules.yml"
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+      - targets: ['localhost:9093']
+
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'prometheus_klever'
+  - job_name: 'prometheus'
     static_configs:
-      - targets: ['ip_of_node:8080']
+      - targets: ['localhost:9090']
+
+  - job_name: 'klever_metrics'
+    static_configs:
+      - targets: ['170.187.150.52:8080']
     metrics_path: "/node/metrics"
 
-  # Example job for node_exporter
-  # - job_name: 'node_exporter'
-  #   static_configs:
-  #     - targets: ['node_exporter:9100']
-
-  # Example job for cadvisor
-  # - job_name: 'cadvisor'
-  #   static_configs:
-  #     - targets: ['cadvisor:8080']
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['170.187.150.52:8081']
