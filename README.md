@@ -64,6 +64,6 @@
 - Once installed, you can configure it in Portainer
 - Create a new stack so you can install Node Exporter and cAdvisor
 	- Copy the node-exporter.yml file in this repo
-	- We will use port 8081 for cAdvisor since 8080 is used by the node (thanks Klevernator for this tip!)
+	- We will use port 8081 for cAdvisor since 8080 is used by the node (thanks [Klevernator](https://github.com/KingStake21) for this tip!)
 ### Grafana Dashboard configuration
 
