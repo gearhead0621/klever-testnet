@@ -25,6 +25,7 @@
 	- On Linux you can also use `newgrp docker` to activate the changes to groups
 - Verify you can run docker commands without sudo
 	- `docker run hello-world`
+
 ### Docker Compose Install
 - Install Docker Compose
 	- Using the linuxserver.io docker-compose image
@@ -37,6 +38,7 @@
 		- `docker-compose --version`
 	- Create docker-compose.yml file (typically stored in the /opt directory)
 		- `sudo nano /opt/docker-compose.yml`
+
 ### Monitoring Container Setup
 - Install Portainer
 	- Copy the settings from the portainer.yml file in this repo into your docker-compose.yml file
@@ -52,6 +54,16 @@
 	- Edit the Prometheus config file
 		- `sudo nano /etc/prometheus/prometheus.yml`
 	- You can use the example yml in this repo
-	- This will configure Prometheus to target your node's metrics output location
+- This will configure Prometheus to target your node's metrics output location
 - When configured correctly you should see an output on the Targets tab of your Prometheus instance that looks like this:
 ![alt text](https://github.com/gearhead0621/klever-testnet/blob/main/images/Prometheus%20Targets%20example.png "Logo Title Text 1")
+
+### Node Exporter & cAdvisor
+- You can use Portainer to manage remote systems as well
+- You will need to install Portainer Agent on the remote system, in this case it should be your Klever Testnet node
+- Once installed, you can configure it in Portainer
+- Create a new stack so you can install Node Exporter and cAdvisor
+	- Copy the node-exporter.yml file in this repo
+	- We will use port 8081 for cAdvisor since 8080 is used by the node (thanks Klevernator for this tip!)
+### Grafana Dashboard configuration
+
