@@ -23,9 +23,9 @@ scrape_configs:
 
   - job_name: 'klever_metrics'
     static_configs:
-      - targets: ['170.187.150.52:8080']
+      - targets: ['yourIP:8080']
     metrics_path: "/node/metrics"
 
   - job_name: 'cadvisor'
     static_configs:
-      - targets: ['170.187.150.52:8081']
+      - targets: ['yourIP:8081']
