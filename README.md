@@ -39,8 +39,19 @@
 		- `sudo nano /opt/docker-compose.yml`
 ### Monitoring Container Setup
 - Install Portainer
+	- Copy the settings from the portainer.yml file in this repo into your docker-compose.yml file
+- Run your container
+	- `cd /opt`
+	- `docker-compose pull`
+	- `docker-compose up -d`
+- Navigate to the Portainer instance in your browser http://yourip:9000
+- Portainer will have you create a username and password upon first login
+- Since we are running Portainer on the VM we are going to use for the monitoring setup, you can select the local Docker enviornment
 - Using Portainer, create a monitoring stack using the monitoring.yml file located in this repo
-	- That will install the Prometheus and Grafana containers
+	- That will install the Prometheus, Grafana, and Alertmanager containers
 	- Edit the Prometheus config file
 		- `sudo nano /etc/prometheus/prometheus.yml`
+	- You can use the example yml in this repo
 	- This will configure Prometheus to target your node's metrics output location
+- When configured correctly you should see an output on the Targets tab of your Prometheus instance that looks like this:
+![alt text](https://github.com/gearhead0621/klever-testnet/blob/main/images/Prometheus%20Targets%20example.png "Logo Title Text 1")
